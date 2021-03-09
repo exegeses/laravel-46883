@@ -38,3 +38,9 @@ Route::get('/dos', function (){
 Route::get('/formulario', function (){
     return view('formulario');
 });
+Route::post('/procesa', function (){
+    $nombre = $_POST['nombre'];
+    return view('procesa',
+                    [ 'nombre'=>$nombre ]
+            );
+});

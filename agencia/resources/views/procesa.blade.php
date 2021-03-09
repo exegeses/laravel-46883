@@ -7,18 +7,10 @@
 </head>
 <body>
 <main class="container">
-    <h1>Formulario de envío</h1>
+    <h1>Bienvenido</h1>
 
     <div class="alert bg-light col-8 mx-auto shadow">
-    <form action="/procesa" method="post">
-    @csrf
-
-       Nombre: <br>
-        <input type="text" name="nombre"
-               class="form-control">
-        <br>
-        <button class="btn btn-dark">enviar</button>
-    </form>
+        bienvenido {{ $nombre }}
     </div>
 </main>
 </body>

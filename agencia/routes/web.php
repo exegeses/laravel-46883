@@ -49,3 +49,20 @@ Route::get('/inicio', function ()
 {
     return view('inicio');
 });
+
+######################################
+####### CRUD de regiones
+Route::get('/adminRegiones', function ()
+{
+    $regiones = DB::select('
+                        SELECT regID, regNombre
+                            FROM regiones
+                        ');
+    return view('adminRegiones',
+                    [ 'regiones'=>$regiones ]
+            );
+});
+
+
+######################################
+####### CRUD de destinos

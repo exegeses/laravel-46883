@@ -66,3 +66,16 @@ Route::get('/adminRegiones', function ()
 
 ######################################
 ####### CRUD de destinos
+Route::get('/adminDestinos', function()
+{
+    $destinos = DB::select(
+                    'SELECT destID, destNombre,
+                            r.regNombre, destPrecio
+	                    FROM destinos d
+                        INNER JOIN regiones r
+                        ON r.regID = d.regID'
+                    );
+    return view('adminDestinos',
+                        [ 'destinos'=>$destinos ]
+                );
+});

@@ -1,4 +1,4 @@
-#Cómo trabajar con base de datos
+# Cómo trabajar con base de datos
 
 > Laravel utiliza PDO  
 > Primero debemos setear el archivo de configuración general

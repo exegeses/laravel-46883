@@ -44,3 +44,8 @@ Route::post('/procesa', function (){
                     [ 'nombre'=>$nombre ]
             );
 });
+######## Plantillas
+Route::get('/inicio', function ()
+{
+    return view('inicio');
+});

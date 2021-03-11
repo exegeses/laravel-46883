@@ -1,12 +1,12 @@
 #Cómo trabajar con base de datos
 
-> Laravel utiliza PDO
+> Laravel utiliza PDO  
 > Primero debemos setear el archivo de configuración general
 
     .env
 
 > Laravel utiliza dos capas de antracción
-> (clases) que nos facilitan el trabajo con SQL y bases de datos
+> (clases) que nos facilitan el trabajo con SQL y bases de datos  
 > Estas dos clases son:
 
       Raw SQL

@@ -33,7 +33,7 @@
                         </a>
                     </td>
                     <td>
-                        <a href="/eliminarRegion/{{ 'regID' }}" class="btn btn-outline-secondary">
+                        <a href="/eliminarRegion/{{ $region->regID }}" class="btn btn-outline-secondary">
                             Eliminar
                         </a>
                     </td>

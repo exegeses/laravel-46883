@@ -54,10 +54,14 @@ Route::get('/inicio', function ()
 ####### CRUD de regiones
 Route::get('/adminRegiones', function ()
 {
+    /*
     $regiones = DB::select('
                         SELECT regID, regNombre
                             FROM regiones
                         ');
+    */
+    $regiones = DB::table('regiones')
+                        ->get();
     return view('adminRegiones',
                     [ 'regiones'=>$regiones ]
             );
@@ -68,6 +72,7 @@ Route::get('/adminRegiones', function ()
 ####### CRUD de destinos
 Route::get('/adminDestinos', function()
 {
+    /*
     $destinos = DB::select(
                     'SELECT destID, destNombre,
                             r.regNombre, destPrecio
@@ -75,6 +80,10 @@ Route::get('/adminDestinos', function()
                         INNER JOIN regiones r
                         ON r.regID = d.regID'
                     );
+    */
+    $destinos = DB::table('destinos as d')
+                        ->join('regiones as r', 'r.regID', '=', 'd.regID')
+                        ->get();
     return view('adminDestinos',
                         [ 'destinos'=>$destinos ]
                 );

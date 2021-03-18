@@ -198,3 +198,20 @@ Route::post('/agregarDestino', function ()
     return redirect('/adminDestinos')
                 ->with([ 'mensaje'=>'Destino: '.$destNombre.' agregado correctamente' ]);
 });
+Route::get('/modificarDestino/{id}', function ($id)
+{
+    //obtenemos datos de un destino por si id
+    $destino = DB::table('destinos as d')
+                    ->join( 'regiones as r', 'd.regID', '=', 'r.regID' )
+                    ->where('destID', $id)
+                    ->first();
+    //obtenemos listado de regiones
+    $regiones = DB::table('regiones')->get();
+    //retornamos vista
+    return view('modificarDestino',
+                    [
+                        'destino'=>$destino,
+                        'regiones'=>$regiones
+                    ]
+                );
+});

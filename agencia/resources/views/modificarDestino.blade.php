@@ -14,10 +14,13 @@
             <br>
             Región: <br>
             <select name="regID" class="form-control" required>
-                <option value="{{ $destino->regID }}">{{ $destino->regNombre }}</option>
                 <option value="">Seleccione una región</option>
     @foreach( $regiones as $region )
+        @if ( $region->regID == $destino->regID )
+                <option selected value="{{ $region->regID }}">{{ $region->regNombre }}</option>
+        @else
                 <option value="{{ $region->regID }}">{{ $region->regNombre }}</option>
+        @endif
     @endforeach
             </select>
             <br>

@@ -62,3 +62,18 @@
 
 ## Actualizar desde un proyecto existente
 
+>Primero hay que descargar el proyecto existente usando git   
+>preferntemente.   
+>Sino, descargar los archivos de manera tradicional.
+
+> Cuando se descarga de esta modo, NO DESCARGA TODO EL PROYECTO.  
+> NO descarga por ejemplo el directorio "vendor"
+
+> El comando para clonar todo un proyecto desde git es:
+
+    git clone direccion
+
+> Ejemplo:
+
+    git clone https://github.com/exegeses/laravel-46883.git
+

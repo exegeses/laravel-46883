@@ -11,6 +11,7 @@
 3. Recursos
 4. Instalación
 5. Iniciar el server
+6. Actualizar desde un proyecto existente
 
 ## Definición
 > Laravel es uno de los frameworks de código abierto más fáciles de asimilar para PHP.
@@ -57,4 +58,7 @@
 > EL MARAVILLOSO MUNDO DE ARTISAN    
 > para iniciar al server es el comando
 
-`php artisan serve`  
+`php artisan serve`
+
+## Actualizar desde un proyecto existente
+

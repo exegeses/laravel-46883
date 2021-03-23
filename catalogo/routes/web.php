@@ -16,3 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::view('/inicio', 'inicio');
+
+#############################################
+######### CRUD de marcas
+use App\Http\Controllers\MarcaController;
+Route::get('/adminMarcas', [ MarcaController::class, 'index' ] );
+

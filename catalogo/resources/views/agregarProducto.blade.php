@@ -3,38 +3,51 @@
 @section('contenido')
 
 
-        <h1>Alta de un nuevo producto</h1> 
+        <h1>Alta de un nuevo producto</h1>
 
         <div class="alert bg-light border border-white shadow round col-8 mx-auto p-4">
 
             <form action="/agregarProducto" method="post" enctype="multipart/form-data">
-                
+                @csrf
                 Nombre: <br>
-                <input type="text" name="prdNombre" class="form-control">
+                <input type="text" name="prdNombre"
+                       value="{{ old('prdNombre') }}"
+                       class="form-control">
                 <br>
                 Precio: <br>
                 <div class="input-group mb-2">
                     <div class="input-group-prepend">
                         <div class="input-group-text">$</div>
                     </div>
-                    <input type="number" name="prdPrecio" class="form-control">
+                    <input type="number" name="prdPrecio"
+                           value="{{ old('prdPrecio') }}"
+                           class="form-control">
                 </div>
                 <br>
                 Marca: <br>
                 <select name="idMarca" class="form-control" required>
                     <option value="">Seleccione una marca</option>
+           @foreach( $marcas as $marca )
+                    <option value="{{ $marca->idMarca }}">{{ $marca->mkNombre }}</option>
+           @endforeach
                 </select>
                 <br>
                 Categoría: <br>
                 <select name="idCategoria" class="form-control" required>
                     <option value="">Seleccione una Categoría</option>
+           @foreach( $categorias as $categoria )
+                    <option value="{{ $categoria->idCategoria }}">{{ $categoria->catNombre }}</option>
+           @endforeach
                 </select>
                 <br>
                 Presentacion: <br>
-                <textarea name="prdPresentacion" class="form-control"></textarea>
+                <textarea name="prdPresentacion"
+                          class="form-control">{{ old('prdPresentacion') }}</textarea>
                 <br>
                 Stock: <br>
-                <input type="number" name="prdStock" class="form-control" min="0">
+                <input type="number" name="prdStock"
+                       value="{{ old('prdNombre') }}"
+                       class="form-control" min="0">
                 <br>
                 Imagen: <br>
 
@@ -49,6 +62,16 @@
             </form>
 
         </div>
+
+        @if( $errors->any() )
+            <div class="alert alert-danger col-8 mx-auto p-2">
+                <ul>
+                    @foreach( $errors->all() as $error )
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
 
    @endsection
 

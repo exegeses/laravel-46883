@@ -1,3 +1,5 @@
+<img src="https://raw.githubusercontent.com/exegeses/laravel-46883/main/extras/imagenes/laravel-eloquent-orm.png">
+
 # Eloquent ORM
 
 >Laravel incluye Eloquent, un ORM (object-relational mapper) que simplifica la interacicón con bases de datos.  

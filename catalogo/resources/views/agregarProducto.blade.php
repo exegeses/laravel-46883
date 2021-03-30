@@ -46,7 +46,7 @@
                 <br>
                 Stock: <br>
                 <input type="number" name="prdStock"
-                       value="{{ old('prdNombre') }}"
+                       value="{{ old('prdStock') }}"
                        class="form-control" min="0">
                 <br>
                 Imagen: <br>

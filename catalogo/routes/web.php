@@ -34,3 +34,5 @@ Route::get('/agregarProducto', [ ProductoController::class, 'create' ] );
 Route::post('/agregarProducto', [ ProductoController::class, 'store' ] );
 Route::get('/modificarProducto/{id}', [ ProductoController::class, 'edit' ]);
 Route::put('/modificarProducto', [ ProductoController::class, 'update' ] );
+Route::get('/eliminarProducto/{id}', [ ProductoController::class, 'confirmar' ] );
+Route::delete('/eliminarProducto', [ ProductoController::class, 'destroy' ] );

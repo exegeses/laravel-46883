@@ -199,10 +199,8 @@ class ProductoController extends Controller
      */
     public function destroy(Request $request)
     {
-        /*
-        $Producto = Producto::find($request->idProducto);
-        $Producto->delete();
-        */
+
+        # Producto::find($request->idProducto)->delete();
         Producto::destroy($request->idProducto);
         //redirección con mensaje ok
         $prdNombre = $request->prdNombre;

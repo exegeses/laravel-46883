@@ -75,6 +75,11 @@ class ProductoController extends Controller
         // si no enviaron archivo | método store()
         $prdImagen = 'noDisponible.jpg';
 
+        //si no enviaron archivo | método update()
+        if( $request->has('prdImageAnterior') ){
+            $prdImagen = $request->prdImageAnterior;
+        }
+
         // si enviaron imagen
         if( $request->file('prdImagen') ){
             //renombrar archivo
@@ -155,9 +160,26 @@ class ProductoController extends Controller
      * @param  \App\Models\Producto  $producto
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Producto $producto)
+    public function update(Request $request)
     {
-        //
+        //validar
+        $this->validar($request);
+        //subir imagen
+        $prdImagen = $this->subirImagen($request);
+        $prdNombre = $request->prdNombre;
+        //obtener datos, asignar atributos, guardar
+        $Producto = Producto::find($request->idProducto);
+        $Producto->prdNombre = $prdNombre;
+        $Producto->prdPrecio = $request->prdPrecio;
+        $Producto->idMarca = $request->idMarca;
+        $Producto->idCategoria = $request->idCategoria;
+        $Producto->prdPresentacion = $request->prdPresentacion;
+        $Producto->prdStock = $request->prdStock;
+        $Producto->prdImagen = $prdImagen;
+        $Producto->save();
+        //redirección con mensaje ok
+        return redirect('/adminProductos')
+            ->with('mensaje', 'Producto: '.$prdNombre.' modificado correctamente.');
     }
 
     /**

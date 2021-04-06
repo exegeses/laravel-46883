@@ -22,7 +22,7 @@
                     </div>
                     <input type="number" name="prdPrecio"
                            value="{{ old('prdPrecio', $Producto->prdPrecio) }}"
-                           class="form-control">
+                           class="form-control" step="0.01">
                 </div>
                 <br>
                 Marca: <br>
@@ -62,6 +62,8 @@
 
                 <input type="hidden" name="idProducto"
                        value="{{ $Producto->idProducto }}">
+                <input type="hidden" name="prdImageAnterior"
+                       value="{{ $Producto->prdImagen }}">
                 <br>
                 <button class="btn btn-dark mb-3">Modificar Producto</button>
                 <a href="/adminProductos" class="btn btn-outline-secondary mb-3">

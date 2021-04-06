@@ -16,3 +16,7 @@
 
     protected $table = 'mi_tabla';  
 
+> Eloquent también assume que cada modelo correspondiente a una tabla de la base de datostiene una primary key column llamada "id". Si necesitamos modificarla, podemos definir un atributo protected $primaryKey con el nombre del campo que sea nuestra primary key.
+
+    protected $primaryKey = 'icProducto';  
+

@@ -23,6 +23,13 @@ class ProductoController extends Controller
                     );
     }
 
+    public function inicio()
+    {
+        $productos = Producto::with('relMarca','relCategoria')
+                        ->paginate(9);
+        return view('inicio', ['productos' => $productos]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *

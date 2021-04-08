@@ -33,7 +33,7 @@
                         </a>
                     </td>
                     <td>
-                        <a href="/eliminarMarca" class="btn btn-outline-secondary">
+                        <a href="/eliminarMarca/{{ $marca->idMarca }}" class="btn btn-outline-secondary">
                             Eliminar
                         </a>
                     </td>

@@ -20,3 +20,9 @@
 
     protected $primaryKey = 'icProducto';  
 
+> De manera predeterminada, Eloquent espera que todas las tablas de tu base de datos tengan los campos "created_at" y "updated_at"; y por lo tanto el modelo conlleva esta convensión.   
+> Cuando se cree o modifique un modelo, Eloquena seteará los valores en estos campos.   
+> Si no queremos que Eloquent opere con estos campos, o bien si no queremos modificar la estructura de nuestras tablas,debemos definir el atributo público $timestamps de nuestro modelo con el valor false.
+
+    public $timestamps = false;  
+

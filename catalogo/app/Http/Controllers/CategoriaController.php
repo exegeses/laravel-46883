@@ -123,14 +123,32 @@ class CategoriaController extends Controller
             );
     }
 
+    public function confirmar($id)
+    {
+        // Consultar si hay productos con esa categoria
+        $productos = Producto::where('idCategoria', $id)->count();
+        # obtener los datos de una categoria
+        $Categoria = Categoria::find($id);
+
+        # retornar la vista
+        return view('eliminarCategoria',
+            [
+                'Categoria'=>$Categoria,
+                'productos'=>$productos
+            ]
+        );
+    }
     /**
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\Categoria  $categoria
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Categoria $categoria)
+    public function destroy(Request $request)
     {
-        //
+        Categoria::destroy($request->idCategoria);
+
+        return redirect('/adminCategorias')
+            ->with(['mensaje'=>'Categoria: '.$request->catNombre.' eliminada correctamente']);
     }
 }

@@ -56,7 +56,7 @@ Jetstream utiliza Sanctum y, de manera opcional, manejo de equipos de trabajo.
 
 > hasta aquí estaría todo listo, sólo restaría si quisieramos ver qué es lo que hay en los componentes Livewire + Blade, publicarlos
 
-##Publicar componentes de Blade
+## Publicar componentes de Blade
 > Para publicar los componentes de Blade utilizaremos el comando
 
     php artisan vendor:publish --tag=jetstream-views
